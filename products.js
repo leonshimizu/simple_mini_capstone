@@ -32,12 +32,28 @@ var app = new Vue({
         console.log(response.data);
         this.products.push(response.data);
       });
+    },
+    updateProduct: function () {
+      console.log("in the update function");
+      axios.patch('http://localhost:3000/products/9', {
+        name: "Water"
+      })
+        .then(response => {
+          console.log(response.data);
+        });
     }
-    // updateProduct: function() {
-    //   console.log("in the update function");
-    //   axios.patch('http://localhost:3000/products/:id', {
-
-    //   });
-    // }
+  },
+  created: function () {
+    this.allProducts();
   }
 });
+
+// axios.put('https://example.com/cats/1', {
+//     name: 'Tophat Cat'
+//   })
+//   .then(response => {
+//     console.log(response);
+//   })
+//   .catch(error => {
+//     console.log(err);
+//   });

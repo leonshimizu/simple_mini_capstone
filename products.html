@@ -16,12 +16,13 @@
 
     <hr>
 
-    <button v-on:click="allProducts">Products Index</button>
+    <!-- <button v-on:click="allProducts">Products Index</button> -->
     <button v-on:click="createProduct">Add New Product</button>
     <ul>
       <li v-for="product in products">
+        {{ product.id }}
         {{ product.name }}
-        <!-- <button v-on:click="updateProduct">Update Product</button> -->
+        <button v-on:click="updateProduct">Update Product</button>
       </li>
     </ul>
   </div>
